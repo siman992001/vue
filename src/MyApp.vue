@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          Employee
+          Employee Apps
         </q-toolbar-title>
       </q-toolbar>
 
