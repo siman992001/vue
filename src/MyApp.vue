@@ -18,6 +18,7 @@
         <q-route-tab to="/about" label="About" />
         <q-route-tab to="/modal" label="Modal" />
         <q-route-tab to="/counter" label="Counter"/>
+        <q-route-tab to="/cart" label="Cart" />
       </q-tabs>
     </q-header>
 
