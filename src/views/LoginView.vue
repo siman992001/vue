@@ -1,5 +1,5 @@
 <template>
-  <!-- <Login /> -->
+  <Login />
   <h1>{{ counterData.title }}</h1>
   <h2>{{ name }}</h2>
   <button @click="handleClick('Lewis', $event)">Test Login Method</button>
@@ -12,7 +12,7 @@
 
 <script setup>
 import Login from "@/components/Login.vue";
-import useCounter from '../composables/useCounter'
+import useCounter from "../composables/useCounter";
 import { reactive, onBeforeUpdate, onUpdated, onMounted } from "vue";
 const name = "Default non reactive";
 const counterData = reactive({
@@ -20,23 +20,27 @@ const counterData = reactive({
   title: "Hello you are on the login view",
 });
 
-const myCountComposable = useCounter()
+const myCountComposable = useCounter();
 
 // onActivated(()=>{console.log("On Activated")});
 // onDeactivated(()=>{console.log('on deactivated')});
 // onBeforeUnmount(()=>{console.log("On Before UN mount")})
 // onUnmounted(()=>{console.log("On UN mount")});
-onMounted(()=>{console.log("On mount 1")});
+onMounted(() => {
+  console.log("On mount 1");
+});
 // onBeforeMount(()=>{console.log("On before mount")});
 // const nameLength = computed(() => {
 //   return name.value.length;
 // });
 
-onMounted(()=>{console.log("On mount 2")});
+onMounted(() => {
+  console.log("On mount 2");
+});
 
 const handleClick = (lname, e) => {
   //console.log(count.value);
-  myCountComposable.increment()
+  myCountComposable.increment();
   counterData.title += lname;
 };
 

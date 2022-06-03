@@ -1,4 +1,5 @@
 <template>
+  <h2>Items in cart: {{useCart.cartCount}}</h2>
   <div class="q-pa-md bg-grey-10 text-white">
     <div class="q-gutter-y-md column" style="max-width: 300px">
       <q-input
@@ -45,33 +46,40 @@
     <div class="q-pa-md q-gutter-sm">
       <q-btn color="white" text-color="black" label="Login" @click="submit" />
     </div>
-    <div><h1>{{authStore?.user?.email}}</h1></div>
+    <div>
+      <h1>{{ authStore?.user?.email }}</h1>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import {useAuthStore} from '../stores/auth'
-import router from '../router'
+import { useAuthStore } from "../stores/auth";
+import router from "../router";
+import { cart } from "../stores/cart";
 
+const useCart = cart();
 const authStore = useAuthStore();
-authStore.$subscribe((mutation, state)=>{
-    console.log('state changed', state)
-    localStorage.setItem('auth', JSON.stringify({auth:state.auth, user:state.user}))
-})
+authStore.$subscribe((mutation, state) => {
+  console.log("state changed", state);
+  localStorage.setItem(
+    "auth",
+    JSON.stringify({ auth: state.auth, user: state.user })
+  );
+});
 const email = ref("");
 const password = ref("");
 const readonly = ref(false);
 const disable = ref(false);
 
 const submit = () => {
-//   console.log(email.value);
-//   console.log(password.value);
+  //   console.log(email.value);
+  //   console.log(password.value);
   authStore.auth = true;
-  authStore.user = {email: email.value, password:password.value};
-//   console.log(authStore.auth);
-//   console.log(authStore.user);
-  email.value = authStore.user.email
+  authStore.user = { email: email.value, password: password.value };
+  //   console.log(authStore.auth);
+  //   console.log(authStore.user);
+  email.value = authStore.user.email;
   router.push({ name: "home" });
 };
 </script>
