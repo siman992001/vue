@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import { useAuthStore } from '../stores/auth'
 import CounterView from '../views/CounterView.vue'
 import CartView from '../views/CartView.vue'
+import Count from '../components/Count.vue'
 //import {userStore} from '../stores/user'
 
 
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/cart',
       name: 'cart',
       component: CartView
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Count
     }
   ]
 })
