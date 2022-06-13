@@ -4,7 +4,8 @@ import LoginView from '../views/LoginView.vue'
 import { useAuthStore } from '../stores/auth'
 import CounterView from '../views/CounterView.vue'
 import CartView from '../views/CartView.vue'
-import Count from '../components/Count.vue'
+import Count from '../components/CountComp.vue'
+//import Count from '../components/Count.vue'
 //import {userStore} from '../stores/user'
 
 

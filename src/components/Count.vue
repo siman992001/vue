@@ -13,6 +13,9 @@ export default {
   mounted() {
     console.log("count mounted");
   },
+  unmounted(){
+     console.log("count unmounted"); 
+  }
 };
 </script>
 
