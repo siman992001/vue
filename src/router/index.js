@@ -5,6 +5,7 @@ import { useAuthStore } from '../stores/auth'
 import CounterView from '../views/CounterView.vue'
 import CartView from '../views/CartView.vue'
 import Count from '../components/CountComp.vue'
+import Computed from '../components/Computed.vue'
 //import Count from '../components/Count.vue'
 //import {userStore} from '../stores/user'
 
@@ -50,7 +51,7 @@ const router = createRouter({
     {
       path: '/test',
       name: 'test',
-      component: Count
+      component: Computed
     }
   ]
 })
